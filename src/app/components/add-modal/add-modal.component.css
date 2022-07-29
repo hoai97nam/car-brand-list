@@ -1,0 +1,95 @@
+.brand-detail {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.brand-detail div {
+    flex: 1;
+    margin-right: 0.5rem;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.brand-active-button {
+    background-color: #CEF7E2;
+    color: #1F7B4D;
+    border-radius: 48px;
+    border: none;
+}
+
+.brand-inactive-button {
+    background-color: #FAFAFA;
+    color: #5F5F5F;
+    border-radius: 48px;
+    border: none;
+}
+
+.title {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.sub-title {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.title-detail {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.name-input {
+    border-radius: 4px;
+    width: 13rem;
+}
+
+.description-input {
+    border-radius: 4px;
+    resize: none;
+}
+
+.button-create {
+    height: 40px;
+    width: 127px;
+    border-radius: 4px;
+    padding: 9px, 16px, 9px, 16px;
+    background: #0F5EDD;
+    color: #FFFFFF;
+    border: none;
+    margin: 0.5rem;
+}
+
+.button-cancel {
+    height: 40px;
+    width: 83px;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+    padding: 9px, 16px, 9px, 16px;
+    border: 1px solid #B4B4B4;
+    background: #FFFFFF;
+    color: #232323;
+    margin: 0.5rem;
+}
+
+.ant-modal-header {
+    background: #FAFAFA !important;
+}

@@ -1,0 +1,47 @@
+<div class="car-list" style="height: 100%;">
+    <div class="car-list-header">
+        <div class="car-list-left">
+            <div class="title-page">CAR BRANDS LIST</div>
+            <div style="display: flex; align-items: center;">
+                <div >
+                    <i nz-icon nzType="down" style="font-size: 70%;"></i>
+                </div>
+                <div>
+                    <nz-select class="filter-button" [(ngModel)]="selectedValue" (ngModelChange)="filter_onChoose($event)"
+                         nzPlaceHolder="View All" nzBorderless="true" [nzShowArrow]="false">
+                        <nz-option style="font-size: 10px;" *ngFor="let option of optionList" [nzValue]="option" [nzLabel]="option.label">
+                        </nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div>
+                <nz-input-group [nzPrefix]="suffixIconSearch" [nzSuffix]="prefixIconSearch">
+                    <input type="text" nz-input placeholder="Search car brand" [(ngModel)]="searchText" (ngModelChange)="onSearch($event)"/>
+                </nz-input-group>
+                <ng-template #suffixIconSearch>
+                    <i nz-icon nzType="search"></i>
+                </ng-template>
+                <ng-template #prefixIconSearch>
+                    <i nz-icon nzType="redo" style="opacity: 0.2;" (click)="refresh_onClick()"></i>
+                </ng-template>
+            </div>
+        </div>
+        <div class="car-list-right">
+            <button class="add-brand-button" nz-button nzType="primary" (click)="addBrand()">
+                <i nz-icon nzType="plus"></i>
+                Add Brand
+            </button>
+        </div>
+    </div>
+    <div style="overflow-y: auto; height: 95%;">
+        <div *ngFor="let carBrand of carBrandData">
+            <content-item [carBrand]="carBrand" (viewDetail)="viewDetail($event)">
+            </content-item>
+        </div>
+
+    </div>
+</div>
+<div *ngIf="isModalOn">
+    <add-modal [isVisible]="isModalOn" (addBrand)="catchOk($event)"></add-modal>
+
+</div>

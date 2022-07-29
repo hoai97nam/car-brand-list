@@ -1,0 +1,62 @@
+.car-list-header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    padding-bottom: 0.5rem;
+}
+
+.car-list-header .car-list-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 60%;
+}
+
+.car-list-header .car-list-left div {
+    display: flex;
+}
+
+.car-list-header .car-list-right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 40%;
+}
+
+.ant-input-affix-wrapper {
+    border-radius: 20px;
+    background: #F1F1F1;
+}
+
+.ant-input {
+    background: #F1F1F1;
+}
+
+.filter-button {
+    border: none;
+    background: #FFFFFF;
+    color: #232323;
+    width: 8rem;
+}
+
+.add-brand-button {
+    background: #0F5EDD;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 9px 16px;
+}
+
+.cdk-overlay-0 {
+    width: 9rem !important;
+    color: #232323;
+}
+
+.title-page {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}

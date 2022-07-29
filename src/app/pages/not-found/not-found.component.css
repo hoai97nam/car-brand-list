@@ -1,0 +1,21 @@
+.content-header {
+    position: relative;
+    height: 100%;
+    /* background-image: url('https://picsum.photos/200'); */
+    background-repeat: no-repeat;
+}
+
+.content-header div {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    font-size: 30px;
+}
+.content-header a {
+    position: absolute;
+    left: 48%;
+    bottom: 40%;
+    font-size: 30px;
+    text-decoration: underline;
+}
+

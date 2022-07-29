@@ -1,0 +1,78 @@
+<div class="container">
+    <div>
+        <div class="brand-details" (click)="back2BrandList()">
+            <i style="font-size: 60%" nz-icon nzType="left"></i>
+            <span class="brand-title">
+                Brand Details
+            </span>
+        </div>
+        <div class="title-detail">Brand Logo</div>
+        <nz-divider></nz-divider>
+        <div (click)="changeLogo_onClick()" style="cursor: pointer;">
+            <img [src]="data[0].logoUrl ? data[0].logoUrl :'https://picsum.photos/70?grayscale'" alt="random-img">
+        </div>
+        <div class="title-detail">Brand Detail</div>
+        <nz-divider></nz-divider>
+        <div class="brand-detail">
+            <div>
+                <div class="sub-title">Brand Name</div>
+                <input [hidden]="!onEditable" class="name-input" nz-input placeholder="Input Content"
+                    [(ngModel)]="data[0].name" />
+                <div class="content-view" [hidden]="onEditable">{{data[0].name}}</div>
+            </div>
+            <div>
+                <div class="sub-title">Brand Status</div>
+                <button [hidden]="!data[0].active" class="brand-active-button" nz-button nzType="default" 
+                    nz-dropdown
+                    [nzDropdownMenu]="dropdownStatus"
+                    [nzDisabled]="!data[0].active">
+                    <img src="../../../assets/images/active-dot-icon.svg">
+                    Active
+                    <i [hidden]="!onEditable" nz-icon nzType="down"></i>
+                </button>
+                <button [hidden]="data[0].active" class="brand-inactive-button" 
+                    nz-button nzType="default" nz-dropdown
+                    [nzDisabled]="data[0].active"
+                    [nzDropdownMenu]="dropdownStatus">
+                    <img src="../../../assets/images/inactive-dot-icon.svg">
+                    Inactive
+                    <i [hidden]="!onEditable" nz-icon nzType="down"></i>
+                </button>
+                <nz-dropdown-menu  #dropdownStatus="nzDropdownMenu">
+                    <ul [hidden]="!onEditable" nz-menu>
+                        <li [hidden]="data[0].active" nz-menu-item>
+                            <button class="brand-active-button" nz-button nzType="default" (click)="status_onClick()">
+                                <img src="../../../assets/images/active-dot-icon.svg">
+                                Active
+                            </button>
+                        </li>
+                        <li [hidden]="!data[0].active" nz-menu-item>
+                            <button class="brand-inactive-button" nz-button nzType="default" (click)="status_onClick()">
+                                <img src="../../../assets/images/inactive-dot-icon.svg">
+                                Inactive
+                            </button>
+                        </li>
+                    </ul>
+                </nz-dropdown-menu>
+            </div>
+        </div>
+        <div class="sub-title">Brand Description</div>
+        <div>
+            <textarea [hidden]="!onEditable" class="description-input" nz-input
+                placeholder="Autosize height based on content lines" [nzAutosize]="{ minRows: 2, maxRows: 6 }"
+                [(ngModel)]="data[0].description">
+            </textarea>
+            <div [hidden]="onEditable" class="content-view">{{data[0].description}}</div>
+        </div>
+        <div>
+            <button [hidden]="!onEditable" class="save-button" nz-button nzType="primary"
+                (click)="saveChange_onCLick()">Save Change</button>
+
+            <button [hidden]="onEditable" class="save-button" nz-button nzType="primary" (click)="edit_onClick()">Edit
+                Information</button>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
