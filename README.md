@@ -1,27 +1,32 @@
 # CarList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9. Used `ng-zorro-antd` as a library for UI design
 
-## Development server
+## Features
+ - Show car brands with mock data
+ - Sort data as given field
+ - Search brand with name
+ - Add new car brand with given info
+ - Edit car brand
+ 
+ ## Details
+ - `Ascending` sort with:
+     - `All`: sort as Name
+     - `Last Updated`: sort as latest modified time
+     - `Brand Name`: sort as Name
+     - `Number of Models`: sort as number of models
+ - Search - compare if search text includes in Brand Name, trigger every input changes. Data list will be filtered gradually along the times type in. Click clear icon to reclaim full items.
+ - View details - navigate to next page to show details
+ - Edit infomation - click on existing logo to change random image
+ - Add new brand with required info, name and description are mandatory. Image could be uploaded but app will use random image to set logo.
+ - Use [Lorem Picsum](https://picsum.photos/) to get random image as logo brand
+ 
+## Improvement
+- Delete item
+- Lack of model field: default is 0
+- API for Sort and Search
+- Upload image needs 3rd-party server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Deployment
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
