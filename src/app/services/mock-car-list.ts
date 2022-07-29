@@ -8,7 +8,7 @@ const initialValue: CarBrandModel[] = [
         name: 'Toyota',
         description: 'Jeep Grand Cherokee',
         models: 1200,
-        modified: formatDate(new Date('7/27/2022'), 'dd/MM/yyyy', 'en-US'),
+        modified: formatDate(new Date('7/25/2022'), 'dd/MM/yyyy', 'en-US'),
         active: true,
         logoUrl: CAR_BRAND_IMAGES_URL.Toyota
     },
@@ -17,7 +17,7 @@ const initialValue: CarBrandModel[] = [
         name: 'BMW',
         description: 'Brand description is too long',
         models: 800,
-        modified: formatDate(new Date('7/27/2022'), 'dd/MM/yyyy', 'en-US'),
+        modified: formatDate(new Date('7/28/2022'), 'dd/MM/yyyy', 'en-US'),
         active: false,
         logoUrl: CAR_BRAND_IMAGES_URL.BMW
     },
@@ -26,7 +26,7 @@ const initialValue: CarBrandModel[] = [
         name: 'MAZDA',
         description: 'Audi Q7',
         models: 620,
-        modified: formatDate(new Date('7/27/2022'), 'dd/MM/yyyy', 'en-US'),
+        modified: formatDate(new Date('7/20/2022'), 'dd/MM/yyyy', 'en-US'),
         active: true,
         logoUrl: CAR_BRAND_IMAGES_URL.MAZDA
     },
@@ -35,7 +35,7 @@ const initialValue: CarBrandModel[] = [
         name: 'Hyundai',
         description: 'Brand description is too long',
         models: 4260,
-        modified: formatDate(new Date('7/27/2022'), 'dd/MM/yyyy', 'en-US'),
+        modified: formatDate(new Date('7/21/2022'), 'dd/MM/yyyy', 'en-US'),
         active: false,
         logoUrl: CAR_BRAND_IMAGES_URL.Hyundai
     },
@@ -44,7 +44,7 @@ const initialValue: CarBrandModel[] = [
         name: 'KIA',
         description: 'Dodge Charger',
         models: 620,
-        modified: formatDate(new Date('7/27/2022'), 'dd/MM/yyyy', 'en-US'),
+        modified: formatDate(new Date('7/26/2022'), 'dd/MM/yyyy', 'en-US'),
         active: true,
         logoUrl: CAR_BRAND_IMAGES_URL.KIA
     },
@@ -53,7 +53,7 @@ const initialValue: CarBrandModel[] = [
         name: 'Nissan',
         description: 'Brand description is too long',
         models: 4260,
-        modified: formatDate(new Date('7/27/2022'), 'dd/MM/yyyy', 'en-US'),
+        modified: formatDate(new Date('7/24/2022'), 'dd/MM/yyyy', 'en-US'),
         active: false,
         logoUrl: CAR_BRAND_IMAGES_URL.Nissan
     },
