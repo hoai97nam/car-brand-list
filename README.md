@@ -28,5 +28,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Upload image needs 3rd-party server
 
 ## Deployment
-
+- Deployed on Heroku: [https://carbrandlist.herokuapp.com/car-brand-list](https://carbrandlist.herokuapp.com/car-brand-list)
 
