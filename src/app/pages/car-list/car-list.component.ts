@@ -121,11 +121,16 @@ export class CarListComponent implements OnInit, OnDestroy {
     onSearch(event: any) {
         if (event) {
             let text = event.toString().trim();
-            this.carBrandData = this.carBrandData.filter(i => _.includes(i.name?.toLowerCase(), text.toLowerCase()));
+            // add debouce input
+            var debounce = _.debounce(()=>
+                this.carBrandData = this.carBrandData.filter(i => _.includes(i.name?.toLowerCase(), text.toLowerCase()))
+            , 1000)
+            debounce();
         }
     }
     refresh_onClick() {
         this.carBrandData = this.carBrandDataBackup;
         this.searchText = '';        
     }
+
 }
