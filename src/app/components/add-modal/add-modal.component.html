@@ -8,11 +8,12 @@
         </div>
     </ng-template>
     <ng-template #modalContent>
-        <div class="title-detail">Brand Logo</div>
-        <nz-divider></nz-divider>
-        <div style="margin: 1rem 0;">
-            
-            <!-- <nz-upload class="avatar-uploader" nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+        <form [formGroup]="addForm">
+            <div class="title-detail">Brand Logo</div>
+            <nz-divider></nz-divider>
+            <div style="margin: 1rem 0;">
+
+                <!-- <nz-upload class="avatar-uploader" nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                 nzName="avatar" nzListType="picture-card" [nzShowUploadList]="false" [nzBeforeUpload]="beforeUpload"
                 (nzChange)="handleChange($event)">
                 <ng-container *ngIf="!avatarUrl">
@@ -22,57 +23,60 @@
                 <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
             </nz-upload> -->
 
-            <nz-upload nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" nzListType="picture-card"
-                [(nzFileList)]="fileList" [nzShowButton]="fileList.length !== 1" (nzChange)="handleChange($event)" >
-                <div style="border: none; background: white">
-                    <img src="../../../assets/images/add-zone.svg" style="width: 80px;" alt="add-zone">
+                <nz-upload nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" nzListType="picture-card"
+                    [(nzFileList)]="fileList" [nzShowButton]="fileList.length !== 1" (nzChange)="handleChange($event)">
+                    <div style="border: none; background: white">
+                        <img src="../../../assets/images/add-zone.svg" style="width: 80px;" alt="add-zone">
+                    </div>
+                </nz-upload>
+            </div>
+            <div class="title-detail">Brand Detail</div>
+            <nz-divider></nz-divider>
+            <div class="brand-detail">
+                <div>
+                    <div>Brand Name</div>
+                    <input class="name-input" nz-input placeholder="Brand Name" formControlName="name" />
                 </div>
-            </nz-upload>
-        </div>
-        <div class="title-detail">Brand Detail</div>
-        <nz-divider></nz-divider>
-        <div class="brand-detail">
-            <div>
-                <div>Brand Name</div>
-                <input class="name-input" nz-input placeholder="Brand Name" [(ngModel)]="carBrand.name" />
-            </div>
-            <div>
-                <div>Brand Status</div>
-                <button [hidden]="!carBrand.active" class="brand-active-button" nz-button nzType="default" nz-dropdown
-                    [nzDropdownMenu]="dropdownStatus" [nzDisabled]="!carBrand.active">
-                    <img src="../../../assets/images/active-dot-icon.svg">
-                    Active
-                    <i nz-icon nzType="down"></i>
-                </button>
-                <button [hidden]="carBrand.active" class="brand-inactive-button" nz-button nzType="default" nz-dropdown
-                    [nzDisabled]="carBrand.active" [nzDropdownMenu]="dropdownStatus">
-                    <img src="../../../assets/images/inactive-dot-icon.svg">
-                    Inactive
-                    <i nz-icon nzType="down"></i>
-                </button>
-                <nz-dropdown-menu #dropdownStatus="nzDropdownMenu">
-                    <ul nz-menu>
-                        <li [hidden]="carBrand.active" nz-menu-item>
-                            <button class="brand-active-button" nz-button nzType="default" (click)="status_onClick()">
-                                <img src="../../../assets/images/active-dot-icon.svg">
-                                Active
-                            </button>
-                        </li>
-                        <li [hidden]="!carBrand.active" nz-menu-item>
-                            <button class="brand-inactive-button" nz-button nzType="default" (click)="status_onClick()">
-                                <img src="../../../assets/images/inactive-dot-icon.svg">
-                                Inactive
-                            </button>
-                        </li>
-                    </ul>
-                </nz-dropdown-menu>
+                <div>
+                    <div>Brand Status</div>
+                    <button [hidden]="!carBrand.active" class="brand-active-button" nz-button nzType="default"
+                        nz-dropdown [nzDropdownMenu]="dropdownStatus" [nzDisabled]="!carBrand.active">
+                        <img src="../../../assets/images/active-dot-icon.svg">
+                        Active
+                        <i nz-icon nzType="down"></i>
+                    </button>
+                    <button [hidden]="carBrand.active" class="brand-inactive-button" nz-button nzType="default"
+                        nz-dropdown [nzDisabled]="carBrand.active" [nzDropdownMenu]="dropdownStatus">
+                        <img src="../../../assets/images/inactive-dot-icon.svg">
+                        Inactive
+                        <i nz-icon nzType="down"></i>
+                    </button>
+                    <nz-dropdown-menu #dropdownStatus="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li [hidden]="carBrand.active" nz-menu-item>
+                                <button class="brand-active-button" nz-button nzType="default"
+                                    (click)="status_onClick()">
+                                    <img src="../../../assets/images/active-dot-icon.svg">
+                                    Active
+                                </button>
+                            </li>
+                            <li [hidden]="!carBrand.active" nz-menu-item>
+                                <button class="brand-inactive-button" nz-button nzType="default"
+                                    (click)="status_onClick()">
+                                    <img src="../../../assets/images/inactive-dot-icon.svg">
+                                    Inactive
+                                </button>
+                            </li>
+                        </ul>
+                    </nz-dropdown-menu>
 
+                </div>
             </div>
-        </div>
-        <div>Brand Description</div>
-        <textarea class="description-input" nz-input placeholder="Description" [nzAutosize]="{ minRows: 2, maxRows: 6 }"
-            [(ngModel)]="carBrand.description">
+            <div>Brand Description</div>
+            <textarea class="description-input" nz-input placeholder="Description"
+                [nzAutosize]="{ minRows: 2, maxRows: 6 }" formControlName="description">
         </textarea>
+        </form>
     </ng-template>
     <ng-template #modalFooter>
         <button class="button-cancel" nz-button nzType="default" (click)="handleCancel()">Cancel</button>
