@@ -11,6 +11,7 @@ import * as _ from 'lodash';
 export class AppComponent implements OnInit, OnDestroy {
   isCollapsed = false;
   mainSubscription: Subscription;
+  title: string = 'car lists';
 
   constructor(
     private carBrand: CarBrandService,) {
